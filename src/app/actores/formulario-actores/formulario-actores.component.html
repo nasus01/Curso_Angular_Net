@@ -1,0 +1,34 @@
+
+
+<form class="formulario" (submit)="guardarCambios()" [formGroup]="form"> 
+
+ <mat-form-field appearance="outline">
+   <mat-label>Nombre</mat-label>
+   <input matInput formControlName="nombre"/>
+   <mat-error>{{obtenerErrorCampoNombre()}}</mat-error>
+ </mat-form-field>
+
+ <mat-form-field appearance="outline">
+    <mat-label>Fecha de Nacimiento</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error>{{obtenerErrorCampoFechaNacimiento()}}</mat-error>
+ </mat-form-field>
+ <div>
+  <app-input-img 
+  [urlImagenActual]="modelo?.foto"
+  titulo="foto del Actor"(archivoSeleccionado)="archivoSeleccionado($event)"></app-input-img>
+ </div>
+ <div class="contenedor-botones">
+    <button type="submit" mat-flat-button [disabled]="form.invalid">
+      Guardar Cambios
+    </button>
+
+    <a mat-stroked-button routerLink="/actores">
+      Cancelar
+    </a>
+ </div>
+
+</form>
+

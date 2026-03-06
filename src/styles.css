@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+.contenedor-botones{
+    display: flex;         /* Pone los botones en fila */
+    gap: 15px;             /* ESTA ES LA CLAVE: crea espacio real entre ellos */
+    margin-top: 20px;      /* Separa los botones del campo de arriba */
+    justify-content: flex-start;
+}
+
+mat-form-field{
+    width: 100%;
+    max-width: 500px;
+    display: block !important;
+    margin-top: 1rem;
+
+}
+
+.contenedor{
+    margin-top: 1rem;
+
+}

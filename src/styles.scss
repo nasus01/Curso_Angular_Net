@@ -1,0 +1,13 @@
+@use '@angular/material' as mat;
+
+
+
+    .borrar{
+    @include mat.theme(
+         
+      (
+        color: mat.$red-palette
+      )
+
+       )
+   }
