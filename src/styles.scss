@@ -11,3 +11,12 @@
 
        )
    }
+
+
+   .warn{
+    @include mat.theme(
+      (
+        color: mat.$red-palette
+      )
+    )
+   }
