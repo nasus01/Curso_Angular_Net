@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { SelectorMultipleDTO } from './SelectorMultipleModelo';
 
 @Component({
   selector: 'app-selector-multiple',
@@ -7,5 +8,34 @@ import { Component } from '@angular/core';
   styleUrl: './selector-multiple.component.css'
 })
 export class SelectorMultipleComponent {
+   
+  @Input({required: true})
+    Seleccionados!: SelectorMultipleDTO[];
+    
+
+    @Input({required: true})
+    NoSeleccionados!: SelectorMultipleDTO[];
+  
+    seleccionar(elemento: SelectorMultipleDTO,indice:number){
+      this.Seleccionados.push(elemento);
+      this.NoSeleccionados.splice(indice, 1);
+
+    }
+
+    deselecionar(elemento: SelectorMultipleDTO, indice: number){
+      this.NoSeleccionados.push(elemento);
+      this.Seleccionados.splice(indice,1);
+    }
+    selecionarTodo(){
+      this.Seleccionados.push(...this.NoSeleccionados);
+      this.NoSeleccionados.length=0;
+
+    }
+    
+    deselecionarTodo(){
+      this.NoSeleccionados.push(... this.Seleccionados);
+      this.Seleccionados.length=0;
+    }
+
 
 }

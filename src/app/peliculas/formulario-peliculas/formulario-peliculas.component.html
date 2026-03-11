@@ -18,9 +18,17 @@
 
 
   <app-input-img titulo="Póster de la Película" [urlImagenActual]="modelo?.poster" (archivoSeleccionado)="archivoSeleccionado ($event)" ></app-input-img>
-    
-    <div>
+
+      <h4>Seleccione los Géneros</h4>
+
+      <app-selector-multiple [Seleccionados]="generosSeleccionados" [NoSeleccionados]="generosNoSeleccionados" ></app-selector-multiple>
+      <div class="contenedor-botones">
         <button type="submit" mat-flat-button [disabled]="form.invalid">Guardar Cambios</button>
         <a mat-stroked-button routerLink="/">Cancelar</a>
-    </div>
+      </div>
+
+      
+    
+    
+
 </form>
