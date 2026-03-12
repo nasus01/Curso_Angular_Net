@@ -19,6 +19,14 @@ generosNoSeleccionados: SelectorMultipleDTO[] = [
   {llave: 3, valor: 'Comedia'}
 
   ];
+
+  cinesSeleccionados: SelectorMultipleDTO[] = [];
+cinesNoSeleccionados: SelectorMultipleDTO[] = [
+  {llave: 1, valor: 'Mayorca Mall'},
+  {llave: 2, valor: 'Puerta del Norte Mall'},
+  {llave: 3, valor: 'Fabricato Mall'}
+
+  ];
  
   guardandoCambios(pelicula: PeliculaCreacionDTO){
     console.log('creando pelicula', pelicula);
