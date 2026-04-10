@@ -11,6 +11,7 @@ import moment from 'moment';
 import { SelectorMultipleDTO } from '../../compartidos/componentes/selector-multiple/SelectorMultipleModelo';
 import { SelectorMultipleComponent } from "../../compartidos/componentes/selector-multiple/selector-multiple.component";
 import { AutocompleteActoresComponent } from "../../actores/autocomplete-actores/autocomplete-actores.component";
+import { actorAutoCompleteDTO } from '../../actores/actores';
 
 
 @Component({
@@ -36,6 +37,9 @@ export class FormularioPeliculasComponent implements OnInit {
 
    @Input({required: true})
   cinesSeleccionados!: SelectorMultipleDTO[];
+
+  @Input({required: true})
+  actoresSeleccionados!: actorAutoCompleteDTO[];
 
 
 
@@ -66,7 +70,9 @@ export class FormularioPeliculasComponent implements OnInit {
     pelicula.generosIds =generosId;
 
     const cinesIds= this.cinesSeleccionados.map(val => val.llave);
-    pelicula.cinesIds = cinesIds
+    pelicula.cinesIds = cinesIds;
+
+    pelicula.actores = this.actoresSeleccionados;
 
 
     this.posteoFormulario.emit(pelicula);

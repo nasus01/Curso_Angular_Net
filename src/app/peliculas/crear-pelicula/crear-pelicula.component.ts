@@ -3,6 +3,7 @@ import { PeliculaCreacionDTO } from '../peliculas';
 import { FormularioPeliculasComponent } from "../formulario-peliculas/formulario-peliculas.component";
 import { SelectorMultipleDTO } from '../../compartidos/componentes/selector-multiple/SelectorMultipleModelo';
 import { A11yModule } from "@angular/cdk/a11y";
+import { actorAutoCompleteDTO } from '../../actores/actores';
 
 @Component({
   selector: 'app-crear-pelicula',
@@ -27,7 +28,9 @@ cinesNoSeleccionados: SelectorMultipleDTO[] = [
   {llave: 3, valor: 'Fabricato Mall'}
 
   ];
- 
+  
+   actoresSeleccionados: actorAutoCompleteDTO[] =[];
+   
   guardandoCambios(pelicula: PeliculaCreacionDTO){
     console.log('creando pelicula', pelicula);
 
